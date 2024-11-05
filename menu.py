@@ -22,7 +22,7 @@ def PrintMenu():
         "Descarregar dades (Esborra els existents)",
         "Llistar productes i categories",
         "Llistar productes nous",
-        "Llistar els deu productes mes cars",
+        "Llistar els deu productes mes cars d'una categoria",
         "Esborrar base de dades",
         "Sortir"
     ]

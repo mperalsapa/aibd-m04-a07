@@ -89,7 +89,17 @@ if __name__ == "__main__":
                     print(" - {}".format(p["name"]))
 
             case "4":
-                products = client.products.find({}).sort({"unit_price": -1}).limit(10)
+                products = client.categories.find({})
+                for c in products:
+                    print(" id:{0} - {1}".format(c["id"], c["name"]))
+
+                # categoria = 420
+                try:
+                    categoria = int(input("Introdueix una categoria: "))
+                except:
+                    break
+
+                products = client.products.find({"categories.id": categoria}).sort({"unit_price": -1}).limit(10)
                 for p in products:
                     print(" - [{0:.2f}€] {1} ({2})".format(p["unit_price"], p["name"], p["categories"][0]["name"]))
 
